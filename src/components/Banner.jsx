@@ -48,7 +48,7 @@ const Banner = () => {
               }}
            >
               <a
-                 href="https://drive.google.com/file/d/1baWFap1nXL87V7EGjlTbbPidb3czzTvx/view?usp=sharing"
+                 href="https://drive.google.com/file/d/1PD9tHLzsJuvXLwsOtKmpnYR-Z79ii32b/view?usp=sharing"
                  target="_blank"
                  rel="noreferrer noopener"
               >
