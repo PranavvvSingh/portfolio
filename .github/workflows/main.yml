@@ -1,9 +1,8 @@
-name: Build and Deploy to GitHub Pages (docs folder)
+name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
@@ -21,18 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build Vite project
         run: npm run build
-
-      - name: Copy build output to /docs
-        run: |
-          rm -rf docs/*
-          cp -r dist/* docs/
 
       - name: Commit and push changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs
-          git commit -m "Auto-update docs [skip ci]" || echo "No changes to commit"
+          git commit -m "Update GitHub Pages build" || echo "No changes to commit"
           git push
